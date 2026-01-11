@@ -1,14 +1,34 @@
 import { useGSAP } from '@gsap/react'
 import gsap from "gsap";
-import React from 'react'
+import React, { useEffect } from 'react'
 import {ScrollTrigger} from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
 
 const Index = () => {
+
+  useEffect(() =>{
+     const handleMouseMove = (event) =>{
+       const{clientX,clientY} = event;
+       gsap.to('.cursor',{
+           x:clientX ,
+           y:clientY+window.scrollY,
+       });
+     };
+        window.addEventListener('mousemove',handleMouseMove);
+ 
+  return () => {
+      window.removeEventListener('mousemove',handleMouseMove);
+ 
+  };
+  },[])
+
+ 
+
   return (
       <div className='Index1  bg-amber-500 w-full h-screen flex justify-center items-center'>
-       <h1 className='IndexH1 bg-sky-500 h-10 text-center py-1.5 px-2 rounded-2xl'>Hi My Name is vikram</h1>
+       <div className='cursor absolute top-0 left-0 bg-white w-[20px] h-[20px] rounded-2xl z-10'>
+       </div>
   </div>
   )
 }
