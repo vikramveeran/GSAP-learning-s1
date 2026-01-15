@@ -1,11 +1,13 @@
 import React from 'react'
 import Index from './Index'
 import Index2 from './Index2'
+import Home from './TImeLineAnimation/Home'
+import Home1 from './TImeLineAnimation/Home1'
 const App = () => {
   return (
     <div>
-      <Index />
-      <Index2 />
+       <Home />
+       <Home1 />
     </div>
   )
 }

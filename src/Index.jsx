@@ -19,7 +19,6 @@ const Index = () => {
  
   return () => {
       window.removeEventListener('mousemove',handleMouseMove);
- 
   };
   },[])
 
