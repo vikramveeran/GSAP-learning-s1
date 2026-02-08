@@ -6,8 +6,8 @@ import Home1 from './TImeLineAnimation/Home1'
 const App = () => {
   return (
     <div>
-       <Home />
-       <Home1 />
+   
+       <Home/>
     </div>
   )
 }
